@@ -1,6 +1,7 @@
 # Project Title
 
-SprintZer0
+
+**Sprint - 1**
 
 
 ## About
@@ -87,8 +88,7 @@ This Repo is the Tutorial's Task for T12
      *MET Student*
 
 **21.**  **Daniel Ashraf**
-
-*I am the biggest  fan you'll ever see and a Barça fan.*
+	 *I am the biggest  fan you'll ever see and a Barça fan.*
 
 **22.**  **Youssef Hatem**
      *MET Student*
@@ -99,7 +99,5 @@ This Repo is the Tutorial's Task for T12
 ### Authors
 
 * **Omar El-Sayed** - *37-6537* 
-
-
 
 ![Logo](../master/logo/t12l.png)
