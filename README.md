@@ -1,6 +1,6 @@
 # Project Title
 
-SprintZer0
+Sprint1
 
 
 ## About
@@ -95,10 +95,4 @@ This Repo is the Tutorial's Task for T12
 **23.**  **Kareem Abdelkader**
      *MET Student*
      
-### Authors
-
-* **Omar El-Sayed** - *37-6537* 
-
-
-
-![Logo](../master/logo/T12 - Logo.png)
+![Logo](../master/logo/t12l.png)
