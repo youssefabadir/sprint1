@@ -9,18 +9,6 @@ var express = require('express'),
   config = require('./api/config/Config'),
   app = express();
 
-
-var db = require('mongodb').MongoClient;
-
-// Connect to the db
-db.connect("mongodb://localhost:27017/mini-ebayDB", function (err, db) {
-
-    if(err) throw err;
-
-
-});
-
-
 app.set('secret', config.SECRET);
 
 app.use(logger(process.env.NODE_ENV === 'production' ? 'combined' : 'dev'));

@@ -9,17 +9,6 @@ var app = require('../app'),
   http = require('http');
 
 
-// Mongo Connection
-var MongoClient = require('mongodb').MongoClient;
-
-MongoClient.connect("mongodb://localhost:27017/exampleDb", function(err, db) {
-    if(err) { return console.dir(err); }
-
-    db.createCollection('Users', function(err, collection) {});
-
-});
-
-
 /**
  * Normalize a port into a number, string, or false.
  */
