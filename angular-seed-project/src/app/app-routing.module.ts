@@ -1,14 +1,19 @@
 import { NgModule } from '@angular/core';
 import { ExtraOptions, RouterModule, Routes } from '@angular/router';
+import { ParentComponent } from './parent/parent.component';
 
-const routes: Routes = [
+const routes: Routes = [{
+
+  path: '',
+  component: ParentComponent,
+  children: [
   {
     path: 'dashboard',
     loadChildren: './dashboard/dashboard.module#DashboardModule'
   },
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-  { path: '**', redirectTo: 'dashboard' }
-];
+  { path: '**', redirectTo: 'dashboard' },]
+}];
 
 const config: ExtraOptions = {
   useHash: true
