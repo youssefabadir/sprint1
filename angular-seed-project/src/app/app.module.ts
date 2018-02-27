@@ -8,7 +8,10 @@ import { ThemeModule } from './@theme/theme.module';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+import { StoreService } from './@services/store.service';
 import { ParentComponent } from './parent/parent.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
 
 @NgModule({
   declarations: [AppComponent, ParentComponent],
@@ -20,6 +23,6 @@ import { ParentComponent } from './parent/parent.component';
     AppRoutingModule
   ],
   bootstrap: [AppComponent],
-  providers: [{ provide: APP_BASE_HREF, useValue: '/',}]
+  providers: [{ provide: APP_BASE_HREF, useValue: '/',}, StoreService]
 })
 export class AppModule {}

@@ -1,1 +1,36 @@
-<h1>Dashboard Works!!</h1>
+<nb-card>
+  <h1>
+      Team Members
+  </h1>
+
+     
+<ol class="members">
+    <li *ngFor="let member of members"
+      [class.selected]="member === selectedMember"
+      (click)="onSelect(member)">
+      <span class="badge">{{member.id}}</span> {{member.name}}
+    </li>
+  </ol>
+</nb-card>
+
+<nb-card>
+        <div class="col-xs-3 col-xs-offset-9">
+  <div *ngIf="selectedMember">
+ 
+    <h2>{{ selectedMember.name | uppercase }} </h2>
+    <div><span>id: </span>{{selectedMember.id}}</div>
+    <div>
+      
+    </div>
+    <img [src]= selectedMember.image  width="250" height="400">
+    <blockquote class="blockquote">
+            <p class="mb-5">{{selectedMember.line}}
+            </p>
+    </blockquote>
+  
+  </div>
+  
+
+
+</div>
+</nb-card>
