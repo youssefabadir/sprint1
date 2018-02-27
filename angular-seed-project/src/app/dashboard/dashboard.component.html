@@ -5,10 +5,10 @@
 
      
 <ol style="font-size: 25px;">
-    <li *ngFor="let member of members"
+    <li  *ngFor="let member of members"
       [class.selected]="member === selectedMember"
       (click)="onSelect(member)">
-      <span class="badge">{{member.id}}</span> {{member.name}}
+      {{member.name}}
     </li>
   </ol>
 </nb-card>

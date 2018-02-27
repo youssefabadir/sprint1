@@ -48,6 +48,10 @@ export class StoreComponent implements OnInit {
         title: 'Price',
         type: 'number',
       },
+      createdAt:{
+        title:'CreatedAt',
+        type: 'Date',
+      }
     },
   };
 
