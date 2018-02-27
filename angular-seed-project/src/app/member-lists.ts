@@ -17,8 +17,14 @@ export const MemberList : Member[] = [
 {id: 13, name:'Youssef Hatem',image: "/assets/images/Youssef Hatem.JPG",line:" MET Student"},
 {id: 14, name:'Zeyad Yasser',image: "/assets/images/Zeyad Yasser.JPG",line:"i'm a hard worker and an ambitious person whose dreaming of a better future, i tend to be friendly with others"},
 {id: 15, name:'Omar Abdelaziz',image: "/assets/images/Omar Abdelaziz.JPG",line:"I'm 22 years old and i'm from alexandria however i study at GUC, i'm interested in computer science and sports"},
-
-
+{id: 16, name:'Youssef Bahaa',image: "/assets/images/Youssef Bahaa.jpg",line:"Just let me die in peace!"},
+{id: 17, name:'Ahmed Amr',image:"/assets/images/Ahmed Diab.jpg",line:"Coding is my girlfriend"},
+{id: 18,name:'Omar El-Sayed',image:'/assets/images/Omar el sayed.jpg',line:"The Coolest one and the Scrum master"},
+{id: 19,name:'George Maged',image:'/assets/images/George Maged.jpg',line:"I like both frontend and backend, can also make noodles"},
+{id: 20,name:'Youssef William',image:'/assets/images/Youssef William.jpg',line:"I'm the one you call if u want the A+ in ur project"},
+{id: 21,name:'Kareem Abdelkader',image:'/assets/images/t12l.png',line:"Met-Student"},
+{id: 22,name:'Abdelrahman Hossam',image:'/assets/images/t12l.png',line:"The Tech guy"},
+{id: 23,name:'Omar Al-Dahrawy',image:'/assets/images/omar el dahrawy.jpg',line:"Your average MET student."}
 
 
 
