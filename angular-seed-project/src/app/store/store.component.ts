@@ -12,11 +12,11 @@ export class StoreComponent implements OnInit {
   
   products: LocalDataSource = new LocalDataSource();
 
-  constructor(public productService: StoreService) { }
+  constructor(public storeService: StoreService) { }
 
   ngOnInit() {
 
-    this.productService.getProducts().subscribe((response) => {
+    this.storeService.getProducts().subscribe((response) => {
       this.products.load(response.data);
       console.log(this.products);
     });
@@ -64,7 +64,7 @@ export class StoreComponent implements OnInit {
   }
 
   onCreate(event): void{
-    this.productService.createProduct(event.newData).subscribe((response) => {
+    this.storeService.createProduct(event.newData).subscribe((response) => {
       event.confirm.resolve(event.newData);
       //this.ngOnInit();
     });
