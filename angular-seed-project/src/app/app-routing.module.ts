@@ -11,6 +11,10 @@ const routes: Routes = [{
     path: 'dashboard',
     loadChildren: './dashboard/dashboard.module#DashboardModule'
   },
+  {
+    path: 'store',
+    loadChildren: './store/store.module#StoreModule'
+  },
  
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: '**', redirectTo: 'dashboard' },]
