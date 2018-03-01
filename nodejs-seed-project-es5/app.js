@@ -1,13 +1,49 @@
 require('./api/config/DBConnection');
 var express = require('express'),
+  path = require('path'),
   logger = require('morgan'),
   cors = require('cors'),
   helmet = require('helmet'),
   compression = require('compression'),
   bodyParser = require('body-parser'),
-  routes = require('./api/routes'),
+  routes = require('./api/routes/index'),
   config = require('./api/config/Config'),
+  passport = require('passport'),
+
   app = express();
+
+  port = 3000;
+
+  // cors middleware
+  app.use(cors());
+  
+  // set static folder
+
+  app.use(express.static(path.join(__dirname, 'public')));
+
+
+  // body parser middleware
+  app.use(bodyParser.json());
+
+  // passport middleware
+  app.use(passport.initialize());
+  app.use(passport.session());
+
+  require('./api/config/passport')(passport);
+
+
+  app.use('/users', routes);
+  
+  // index route
+  app.get('/', (req, res) => {
+    res.send('Invalid Endpoint');
+  });
+
+  // start server
+  app.listen(port, () => {
+    console.log('Server started on port ' + port);
+
+  });
 
 app.set('secret', config.SECRET);
 
@@ -27,7 +63,7 @@ app.use(
     extended: false
   })
 );
-app.use('/api', routes);
+//app.use('/api', routes);
 
 // 500 internal server error handler
 app.use(function(err, req, res, next) {
