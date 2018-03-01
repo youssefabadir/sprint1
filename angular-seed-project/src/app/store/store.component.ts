@@ -25,7 +25,7 @@ export class StoreComponent implements OnInit {
   }
 
   settings = {
-    /*
+    
     add: {
       addButtonContent: '<i class="nb-plus"></i>',
       createButtonContent: '<i class="nb-checkmark"></i>',
@@ -36,13 +36,12 @@ export class StoreComponent implements OnInit {
       editButtonContent: '<i class="nb-edit"></i>',
       saveButtonContent: '<i class="nb-checkmark"></i>',
       cancelButtonContent: '<i class="nb-close"></i>',
-    },*/
-    /*delete: {
+    },
+    delete: {
       deleteButtonContent: '<i class="nb-trash"></i>',
       confirmDelete: true,
-    },*/
+    },
 
-    actions: false,
     columns: {
       name: {
         title: 'Name',
@@ -55,19 +54,19 @@ export class StoreComponent implements OnInit {
     },
   };
 
- // onDeleteConfirm(event): void {
-   // if (window.confirm('Are you sure you want to delete?')) {
-     // event.confirm.resolve();
-    //} else {
-      //event.confirm.reject();
-    //}
-  //}
+  onDeleteConfirm(event): void {
+    if (window.confirm('Are you sure you want to delete?')) {
+      event.confirm.resolve();
+    } else {
+      event.confirm.reject();
+    }
+  }
 
- // onCreate(event): void{
-   // this.productService.createProduct(event.newData).subscribe((response) => {
-     // event.confirm.resolve(event.newData);
-      //this.ngOnInit();
-    //});
- // }
+  onCreate(event): void{
+    this.productService.createProduct(event.newData).subscribe((response) => {
+      event.confirm.resolve(event.newData);
+      this.ngOnInit();
+    });
+  }
 
 }

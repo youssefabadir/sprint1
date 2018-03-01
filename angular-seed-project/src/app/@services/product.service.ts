@@ -12,8 +12,8 @@ export class ProductService {
     return this.http.get(environment.apiUrl + '/product/getProducts').map(res => res.json());
   }
 
-  //createProduct(product: Product){
-    //return this.http.post(environment.apiUrl + '/product/createProduct', product).map(res => res.json());
-  //}
+  createProduct(product){
+   return this.http.post(environment.apiUrl + '/product/createProduct', product).map(res => res.json());
+  }
 
 }
