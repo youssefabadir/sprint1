@@ -33,9 +33,52 @@ export class AuthComponent implements OnInit {
     }    
     this.cookie.put('username', this.user.username);
     this.authService.authenticateUser(this.user).subscribe((response)=>{
-      console.log(response.data);
+      if(!response.success){
+      this.message = "username or passsword is incorrect"
+      return;}
 
-    });
-    this.router.navigate(['']);
+      else{
+        this.router.navigate(['']);
+
+      }
+        });
+    
   }
+
+
+  onRegister(){
+    
+        if(!this.user.username){
+          this.message = "please enter a username"
+          return;
+        }
+    
+        if(!this.user.password){
+          this.message = "please enter a password"
+          return;
+        }   
+        
+        if(!this.user.name){
+          this.message = "please enter a fullname"
+          return;
+        }
+    
+        if(!this.user.email){
+          this.message = "please enter an email"
+          return;
+        }
+    
+        this.cookie.put('username', this.user.username);
+        this.authService.register(this.user).subscribe((response)=>{
+          if(!response.success){
+          this.message = "please enter the correct data"
+          return;}
+    
+          else{
+            this.router.navigate(['']);
+    
+          }
+            });
+        
+      }
 }

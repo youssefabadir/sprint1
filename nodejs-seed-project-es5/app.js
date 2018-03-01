@@ -32,7 +32,7 @@ var express = require('express'),
   require('./api/config/passport')(passport);
 
 
-  app.use('/users', routes);
+  app.use('/api', routes);
   
   // index route
   app.get('/', (req, res) => {
