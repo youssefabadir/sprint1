@@ -1,5 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NbMenuService, NbSidebarService } from '@nebular/theme';
+import { CookieService } from 'angular2-cookie/services/cookies.service';
+import { Router } from '@angular/router';
+import { User } from '../../../@objects/user';
+
 
 @Component({
   selector: 'ngx-header',
@@ -8,15 +12,18 @@ import { NbMenuService, NbSidebarService } from '@nebular/theme';
 })
 export class HeaderComponent implements OnInit {
   @Input() position = 'normal';
-  user: any;
+  user: User = new User();
   userMenu: any[];
 
   constructor(
     private sidebarService: NbSidebarService,
-    private menuService: NbMenuService
+    private menuService: NbMenuService,
+    private cookie: CookieService,
+    private router: Router
   ) {}
 
   ngOnInit() {
+    this.user.username = this.cookie.get('username');
     this.userMenu = [{ title: 'Logout' }];
   }
 
@@ -31,7 +38,8 @@ export class HeaderComponent implements OnInit {
 
   onMenuClick(event) {
     if (event.title === 'Logout') {
-      // Think about what to do ;)
+      this.cookie.remove('username');
+      this.router.navigate(['/authentication']);
     }
   }
 }

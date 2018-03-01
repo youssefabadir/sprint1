@@ -9,11 +9,16 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { ParentComponent } from './parent/parent.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-
+import { AuthComponent } from './auth/auth.component';
+import { AuthParentComponent } from './auth-parent/auth-parent.component';
+import { AuthService } from './@services/auth.service';
+import { AuthGuard } from './@guards/auth.guard';
+import { CookieService } from 'angular2-cookie/services/cookies.service';
+import { ErrorComponent } from './error/error.component';
+import { NbThemeModule } from '@nebular/theme';
 
 @NgModule({
-  declarations: [AppComponent, ParentComponent],
+  declarations: [AppComponent, ParentComponent, AuthParentComponent, ErrorComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -22,6 +27,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AppRoutingModule
   ],
   bootstrap: [AppComponent],
-  providers: [{ provide: APP_BASE_HREF, useValue: '/',}]
+  providers: [{ provide: APP_BASE_HREF, useValue: '/',}, AuthGuard, CookieService,AuthService]
 })
 export class AppModule {}
