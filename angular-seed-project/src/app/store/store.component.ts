@@ -25,8 +25,8 @@ export class StoreComponent implements OnInit {
   }
 
   settings = {
-    /*
-    add: {
+    actions:false,
+    /*add: {
       addButtonContent: '<i class="nb-plus"></i>',
       createButtonContent: '<i class="nb-checkmark"></i>',
       cancelButtonContent: '<i class="nb-close"></i>',
@@ -36,13 +36,18 @@ export class StoreComponent implements OnInit {
       editButtonContent: '<i class="nb-edit"></i>',
       saveButtonContent: '<i class="nb-checkmark"></i>',
       cancelButtonContent: '<i class="nb-close"></i>',
+      confirmSave: true,
     },
     delete: {
       deleteButtonContent: '<i class="nb-trash"></i>',
       confirmDelete: true,
     },*/
-    actions : false,
     columns: {
+      _id: {
+        title: 'Product ID',
+        type: 'string',
+        value:false
+      },
       name: {
         title: 'Name',
         type: 'string',
@@ -51,19 +56,35 @@ export class StoreComponent implements OnInit {
         title: 'Price',
         type: 'number',
       },
+      createdAt: {
+        title: 'Created At',
+        type: 'date',
+      },
+      updatedAt: {
+        title: 'Updated At',
+        type: 'date',
+      },
+      category: {
+        title: 'Category',
+        type: 'string',
+      },
+
     },
   };
 
-  onDeleteConfirm(event): void {
-    if (window.confirm('Are you sure you want to delete?')) {
+  onDelete(event): void {
       this.productService.deleteProduct(event.data._id).subscribe((response) => {
         event.confirm.resolve();
         this.ngOnInit();
-      });
-      } else {
-      event.confirm.reject();
-    }
+      });      
   }
+
+  onEdit(event): void {
+    this.productService.editProduct(event.data._id, event.newData).subscribe((response) => {
+      event.confirm.resolve();
+      this.ngOnInit();
+    });      
+}
 
   onCreate(event): void{
     this.productService.createProduct(event.newData).subscribe((response) => {

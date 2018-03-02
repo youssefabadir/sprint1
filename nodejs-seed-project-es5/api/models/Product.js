@@ -22,6 +22,7 @@ var productSchema = mongoose.Schema({
   },
   category: {
     type: String
+    
   }
   
 });

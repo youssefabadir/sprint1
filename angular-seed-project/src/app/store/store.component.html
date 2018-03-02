@@ -5,7 +5,7 @@
 
   <nb-card-body>
     <ng2-smart-table [settings]="settings" [source]="products" 
-      (createConfirm)="onCreate($event)" (deleteConfirm)="onDeleteConfirm($event)"></ng2-smart-table>
+      (createConfirm)="onCreate($event)" (editConfirm)="onEdit($event)" (deleteConfirm)="onDelete($event)"></ng2-smart-table>
 
   </nb-card-body>
 </nb-card>
