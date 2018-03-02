@@ -25,8 +25,7 @@ export class StoreComponent implements OnInit {
   }
 
   settings = {
-    actions:false,
-    /*add: {
+    add: {
       addButtonContent: '<i class="nb-plus"></i>',
       createButtonContent: '<i class="nb-checkmark"></i>',
       cancelButtonContent: '<i class="nb-close"></i>',
@@ -41,13 +40,13 @@ export class StoreComponent implements OnInit {
     delete: {
       deleteButtonContent: '<i class="nb-trash"></i>',
       confirmDelete: true,
-    },*/
+    },
     columns: {
-      _id: {
+     /* _id: {
         title: 'Product ID',
         type: 'string',
         value:false
-      },
+      },*/
       name: {
         title: 'Name',
         type: 'string',
@@ -56,14 +55,14 @@ export class StoreComponent implements OnInit {
         title: 'Price',
         type: 'number',
       },
-      createdAt: {
+      /*createdAt: {
         title: 'Created At',
         type: 'date',
       },
       updatedAt: {
         title: 'Updated At',
         type: 'date',
-      },
+      },*/
       category: {
         title: 'Category',
         type: 'string',
@@ -93,4 +92,4 @@ export class StoreComponent implements OnInit {
     });
   }
 
-} 
+}
