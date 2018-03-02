@@ -43,10 +43,6 @@ export class StoreComponent implements OnInit {
     },*/
     actions : false,
     columns: {
-      id: {
-        title: 'ID',
-        type: 'string',
-      },
       name: {
         title: 'Name',
         type: 'string',
@@ -54,18 +50,6 @@ export class StoreComponent implements OnInit {
       price: {
         title: 'Price',
         type: 'number',
-      },
-      createdAt: {
-        title: 'Created At',
-        type: 'date',
-      },
-      updatedAt: {
-        title: 'updated At',
-        type: 'date',
-      },
-      seller: {
-        title: 'Seller Name',
-        type: 'string',
       },
     },
   };
