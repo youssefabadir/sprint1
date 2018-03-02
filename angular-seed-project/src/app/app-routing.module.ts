@@ -14,10 +14,7 @@ const routes: Routes = [
         path: '',
         loadChildren: './dashboard/dashboard.module#DashboardModule'
       },
-      {
-        path: 'store',
-        loadChildren: './store/store.module#StoreModule'
-      },]
+     ]
   },
   { path: '',
     component: AuthParentComponent,
