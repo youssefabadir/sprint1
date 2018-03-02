@@ -19,7 +19,7 @@ export class ProductService {
   deleteProduct(product){
     return this.http.delete(environment.apiUrl + '/product/deleteProduct/'+ product).map(res => res.json());
    }
-  
+   
    editProduct(product , newData){
     return this.http.patch(environment.apiUrl + '/product/updateProduct/'+ product , newData).map(res => res.json());
    }
