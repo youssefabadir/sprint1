@@ -1,0 +1,32 @@
+<h2 class= "title">Sign In or Register</h2>
+<small class= "form-text sub-title">Hello! Welcome to Dozen Developers First Production</small>
+
+<h6 style="color:red; margin-top: 20px" >{{message}}</h6>
+<nb-tabset>
+    <nb-tab tabTitle="Sign in">
+        <div class="form-group">       
+            <h4 style="margin-top: 40px">username</h4>          
+            <input name="username" [(ngModel)]="user.username" placeholder="Username" class="form-control">
+            <h4 style="margin-top: 20px">password</h4>          
+            <input name="password" [(ngModel)]="user.password" placeholder="Password" class="form-control" type="password" autocomplete="off">
+        
+            <button style="margin-top: 20px" class="btn btn-success" (click)="onLogin()">Sign In</button>
+        </div>
+    </nb-tab>
+    <nb-tab tabTitle="Register">
+        <div class="form-group">       
+            <h4 style="margin-top: 40px">Fullname</h4>          
+            <input name="name" [(ngModel)]="user.name" placeholder="Name" class="form-control">
+            <h4 style="margin-top: 20px">E-Mail</h4>          
+            <input name="email" [(ngModel)]="user.email" placeholder="E-Mail" class="form-control"  >
+            <h4 style="margin-top: 20px">Username</h4>          
+            <input name="username" [(ngModel)]="user.username" placeholder="Username" class="form-control">
+            <h4 style="margin-top: 20px">Password</h4>          
+            <input name="password" [(ngModel)]="user.password" placeholder="Password" class="form-control" type="password" autocomplete="off">
+        
+            <button style="margin-top: 20px" class="btn btn-success" (click)="onRegister()">Register</button>
+        </div>
+    </nb-tab>
+   </nb-tabset>
+
+        

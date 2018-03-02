@@ -16,7 +16,14 @@ var productSchema = mongoose.Schema({
     type: Date,
     default: Date.now
   },
-  updatedAt: Date
+  updatedAt: Date,
+  createdBy: {
+    type: String
+  },
+  category: {
+    type: String
+  }
+  
 });
 
 mongoose.model('Product', productSchema);
