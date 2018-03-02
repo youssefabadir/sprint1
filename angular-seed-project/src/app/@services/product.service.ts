@@ -16,4 +16,8 @@ export class ProductService {
    return this.http.post(environment.apiUrl + '/product/createProduct', product).map(res => res.json());
   }
 
+  deleteProduct(product){
+    return this.http.delete(environment.apiUrl + '/product/createProduct'+ product).map(res => res.json());
+   }
+
 }

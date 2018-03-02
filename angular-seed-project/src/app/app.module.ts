@@ -28,6 +28,6 @@ import { NbThemeModule } from '@nebular/theme';
     AppRoutingModule
   ],
   bootstrap: [AppComponent],
-  providers: [{ provide: APP_BASE_HREF, useValue: '/',}, AuthGuard, CookieService,AuthService]
+  providers: [{ provide: APP_BASE_HREF, useValue: '/',}, AuthGuard, CookieService,AuthService,ProductService]
 })
 export class AppModule {}

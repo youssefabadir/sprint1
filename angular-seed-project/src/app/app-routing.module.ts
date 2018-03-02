@@ -14,6 +14,10 @@ const routes: Routes = [
         path: '',
         loadChildren: './dashboard/dashboard.module#DashboardModule'
       },
+      {
+        path: 'store',
+        loadChildren: './store/store.module#StoreModule'
+      },
      ]
   },
   { path: '',
@@ -34,13 +38,10 @@ const routes: Routes = [
     path: '**',
     redirectTo: 'error'
   },
-  {
-    path: 'store',
-    loadChildren: './store/store.module#StoreModule'
-  },
  
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-  { path: '**', redirectTo: 'dashboard' },]
+  { path: '**', redirectTo: 'dashboard' },
+];
 
 
 const config: ExtraOptions = {
